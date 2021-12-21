@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ProgressBar
+        android:id="@+id/login_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"/>
+
+    <LinearLayout
+        android:id="@+id/form_login_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:padding="12dp">
+
+        <EditText
+            android:id="@+id/input_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="40dp"
+            android:inputType="text"
+            android:gravity="center_vertical"
+            android:hint="@string/login_hint"
+            android:layout_marginBottom="12dp"
+            android:background="@null"/>
+
+        <EditText
+            android:id="@+id/input_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="40dp"
+            android:inputType="numberPassword"
+            android:gravity="center_vertical"
+            android:hint="@string/password_hint"
+            android:layout_marginBottom="12dp"
+            android:background="@null" />
+
+        <EditText
+            android:id="@+id/input_confirm_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="40dp"
+            android:inputType="numberPassword"
+            android:gravity="center_vertical"
+            android:hint="@string/confirm_password_hint"
+            android:layout_marginBottom="8dp"
+            android:background="@null" />
+
+        <TextView
+            android:id="@+id/change_form"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="8dp"
+            android:minWidth="100dp"
+            android:minHeight="10dp"
+            android:text="@string/create_account"/>
+
+        <TextView
+            android:id="@+id/submit_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:minWidth="100dp"
+            android:minHeight="40dp"
+            android:text="@string/sign_in"/>
+
+    </LinearLayout>
+
+</FrameLayout>

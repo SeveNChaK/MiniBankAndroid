@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MiniBank</string>
+    <string name="sign_in">Войти</string>
+    <string name="sign_up">Зарегистрироваться</string>
+    <string name="login_hint">Логин</string>
+    <string name="password_hint">Пароль</string>
+    <string name="confirm_password_hint">Пароль еще раз</string>
+    <string name="already_exist_account">Уже есть аккаунт</string>
+    <string name="create_account">Создать аккаунт</string>
+</resources>
