@@ -7,4 +7,11 @@
     <string name="confirm_password_hint">Пароль еще раз</string>
     <string name="already_exist_account">Уже есть аккаунт</string>
     <string name="create_account">Создать аккаунт</string>
+
+    <string name="add_money">Пополнить</string>
+    <string name="get_money">Вывести</string>
+    <string name="send_money">Перевести</string>
+    <string name="payment_history">История операций</string>
+
+    <string name="amount_label">Введите сумму:</string>
 </resources>

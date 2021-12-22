@@ -6,4 +6,5 @@ object Links {
     const val MAIN_PAGE_LINK = "$HOST/main"
     const val SIGN_IN_LINK = "$HOST/signIn"
     const val SIGN_UP_LINK = "$HOST/signUp"
+    const val ADD_MONEY_LINK = "$HOST/addMoney"
 }

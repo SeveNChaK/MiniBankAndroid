@@ -51,8 +51,8 @@ class LoginFragment : Fragment() {
         changeFormView = view.findViewById(R.id.change_form)
         submitButton = view.findViewById(R.id.submit_button)
 
-        progressView.visible()
-        formLoginContainer.gone()
+        progressView.gone()
+        formLoginContainer.visible()
 
         changeForm()
 
@@ -70,36 +70,38 @@ class LoginFragment : Fragment() {
 
             if (isLoginForm) {
                 viewModel.signIn(login, password) { isOk ->
+                    progressView.gone()
+                    formLoginContainer.visible()
+
                     if (isOk) {
                         navigateToMain()
                     } else {
-                        progressView.gone()
-                        formLoginContainer.visible()
                         Toast.makeText(requireContext(), "Error", Toast.LENGTH_SHORT).show()
                     }
                 }
             } else {
                 val confirmPassword = inputConfirmPasswordView.text.toString()
                 viewModel.signUp(login, password, confirmPassword) { isOk ->
+                    progressView.gone()
+                    formLoginContainer.visible()
+
                     if (isOk) {
                         navigateToMain()
                     } else {
-                        progressView.gone()
-                        formLoginContainer.visible()
                         Toast.makeText(requireContext(), "Error", Toast.LENGTH_SHORT).show()
                     }
                 }
             }
         }
 
-        viewModel.tryToMain { isOk ->
-            if (isOk) {
-                navigateToMain()
-            } else {
-                progressView.gone()
-                formLoginContainer.visible()
-            }
-        }
+//        viewModel.tryToMain { isOk ->
+//            progressView.gone()
+//            formLoginContainer.visible()
+//
+//            if (isOk) {
+//                navigateToMain()
+//            }
+//        }
     }
 
     private fun changeForm() {
@@ -115,6 +117,6 @@ class LoginFragment : Fragment() {
     }
 
     private fun navigateToMain() {
-        navigator.show(MainScreenFragment::class.java, false)
+        navigator.show(MainScreenFragment::class.java, true)
     }
 }
