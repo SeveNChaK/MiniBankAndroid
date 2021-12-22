@@ -5,4 +5,5 @@ object RequestParams {
     const val PASSWORD = "password"
     const val CONFIRM_PASSWORD = "confirmPassword"
     const val AMOUNT = "amount"
+    const val TARGET_NAME = "targetName"
 }

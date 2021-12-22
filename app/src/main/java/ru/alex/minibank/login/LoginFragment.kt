@@ -69,24 +69,24 @@ class LoginFragment : Fragment() {
             val password = inputPasswordView.text.toString()
 
             if (isLoginForm) {
-                viewModel.signIn(login, password) { isOk ->
+                viewModel.signIn(login, password) { user ->
                     progressView.gone()
                     formLoginContainer.visible()
 
-                    if (isOk) {
-                        navigateToMain()
+                    if (user != null) {
+                        navigateToMain(Bundle().apply { putSerializable("user", user) })
                     } else {
                         Toast.makeText(requireContext(), "Error", Toast.LENGTH_SHORT).show()
                     }
                 }
             } else {
                 val confirmPassword = inputConfirmPasswordView.text.toString()
-                viewModel.signUp(login, password, confirmPassword) { isOk ->
+                viewModel.signUp(login, password, confirmPassword) { user ->
                     progressView.gone()
                     formLoginContainer.visible()
 
-                    if (isOk) {
-                        navigateToMain()
+                    if (user != null) {
+                        navigateToMain(Bundle().apply { putSerializable("user", user) })
                     } else {
                         Toast.makeText(requireContext(), "Error", Toast.LENGTH_SHORT).show()
                     }
@@ -116,7 +116,7 @@ class LoginFragment : Fragment() {
         }
     }
 
-    private fun navigateToMain() {
-        navigator.show(MainScreenFragment::class.java, true)
+    private fun navigateToMain(args: Bundle? = null) {
+        navigator.show(MainScreenFragment::class.java, false, args = args)
     }
 }
